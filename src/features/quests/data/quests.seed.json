@@ -6,105 +6,591 @@
     "tags": ["body", "reset", "outside"]
   },
   {
-    "id": "text-old-friend",
-    "title": "Nhắn một người lâu rồi chưa nói chuyện",
-    "prompt": "Không cần deep. Chỉ cần mở lại một cánh cửa nhỏ.",
-    "tags": ["social", "warm"]
+    "id": "hunt-green-corner",
+    "title": "Săn một góc xanh",
+    "prompt": "Tìm một chỗ có cây, ngồi hoặc đứng lại một chút để nhìn cho đã.",
+    "tags": ["outside", "calm", "nature"]
   },
   {
-    "id": "bad-drawing",
-    "title": "Vẽ xấu có chủ đích",
-    "prompt": "Vẽ một thứ bất kỳ và cho phép nó xấu. Mục tiêu là chơi, không phải đẹp.",
-    "tags": ["creative", "fun"]
+    "id": "take-different-route",
+    "title": "Đi một con đường khác",
+    "prompt": "Cùng một điểm đến, nhưng chọn đường khác mọi khi.",
+    "tags": ["outside", "novelty", "adventure"]
   },
   {
-    "id": "three-good-things",
-    "title": "Ghi 3 chuyện tốt",
-    "prompt": "Ghi lại ba điều nhỏ tốt đẹp hôm nay. Nhỏ cỡ ly nước ngon cũng được.",
-    "tags": ["mind", "gratitude"]
+    "id": "photo-five-ordinary-beauties",
+    "title": "Chụp 5 thứ bình thường mà đẹp",
+    "prompt": "Tìm vài thứ rất đời thường nhưng nhìn kỹ thấy có gu.",
+    "tags": ["outside", "creative", "notice"]
   },
   {
-    "id": "local-adventure",
-    "title": "Đi một nơi chưa từng đi",
-    "prompt": "Chọn một góc thành phố mày ít ghé. Đi như một mini adventure.",
-    "tags": ["outside", "adventure"]
-  },
-  {
-    "id": "tiny-kindness",
-    "title": "Tử tế bí mật",
-    "prompt": "Làm một việc tốt nhỏ mà không cần kể với ai.",
-    "tags": ["social", "kindness"]
-  },
-  {
-    "id": "one-page-brain-dump",
-    "title": "Xả não một trang",
-    "prompt": "Viết mọi thứ đang chạy trong đầu. Không edit, không cần hay, không cần đúng.",
-    "tags": ["mind", "reset"]
-  },
-  {
-    "id": "photo-theme",
-    "title": "Chụp 10 tấm theo một chủ đề",
-    "prompt": "Chọn một chủ đề: màu đỏ, bóng đổ, cửa sổ, đồ cũ. Rồi đi săn ảnh.",
-    "tags": ["creative", "outside"]
-  },
-  {
-    "id": "clean-one-corner",
-    "title": "Dọn một góc nhỏ",
-    "prompt": "Chỉ một góc thôi: bàn, desktop, Downloads, tủ đầu giường. Đừng biến nó thành đại tu đời.",
-    "tags": ["reset", "home"]
-  },
-  {
-    "id": "solo-cafe",
-    "title": "Ngồi một mình ở quán",
-    "prompt": "Không làm việc. Không cố productive. Chỉ ngồi, nhìn, nghe, và để đầu óc trôi.",
-    "tags": ["solo", "mind"]
-  },
-  {
-    "id": "new-song-walk",
-    "title": "Đi bộ với một album lạ",
-    "prompt": "Bật một album chưa nghe bao giờ và đi một vòng. Để nhạc dẫn mood.",
-    "tags": ["body", "music"]
-  },
-  {
-    "id": "ask-better-question",
-    "title": "Hỏi một câu tốt hơn bình thường",
-    "prompt": "Thay vì hỏi 'ổn không?', hỏi một câu thật hơn một chút.",
-    "tags": ["social", "warm"]
-  },
-  {
-    "id": "make-a-playlist",
-    "title": "Tạo playlist cho một mood kỳ quặc",
-    "prompt": "Ví dụ: 'muốn reset đời nhưng chưa muốn cố quá'. Đặt tên cho vui.",
-    "tags": ["creative", "music"]
-  },
-  {
-    "id": "sunset-mission",
+    "id": "sunset-hunt",
     "title": "Đi săn hoàng hôn",
     "prompt": "Canh lúc trời đổi màu. Đứng yên một chút và nhìn cho đàng hoàng.",
-    "tags": ["outside", "calm"]
+    "tags": ["outside", "calm", "beauty"]
   },
   {
-    "id": "write-future-self",
-    "title": "Viết thư cho mình sau này",
-    "prompt": "Nói thật với bản thân tương lai. Không cần motivational. Chỉ cần thật.",
-    "tags": ["mind", "reflection"]
+    "id": "sunrise-hunt",
+    "title": "Đi săn bình minh",
+    "prompt": "Dậy sớm hơn một chút để nhìn ngày mới bắt đầu.",
+    "tags": ["outside", "reset", "beauty"]
   },
   {
-    "id": "try-new-food",
-    "title": "Ăn một món chưa từng thử",
-    "prompt": "Chọn món làm mày hơi tò mò. Không cần ngon chắc, chỉ cần mới.",
-    "tags": ["adventure", "food"]
+    "id": "tourist-in-familiar-neighborhood",
+    "title": "Làm tourist trong khu quen",
+    "prompt": "Đi quanh khu mình sống như lần đầu tới đó. Để ý biển hiệu, hẻm, âm thanh, mùi.",
+    "tags": ["outside", "notice", "adventure"]
+  },
+  {
+    "id": "enter-new-alley",
+    "title": "Vào một hẻm chưa từng vào",
+    "prompt": "Chọn một con hẻm nhìn an toàn nhưng lạ, đi thử một vòng.",
+    "tags": ["outside", "adventure", "local"]
+  },
+  {
+    "id": "bookstore-strange-shelf",
+    "title": "Đi nhà sách chọn kệ lạ",
+    "prompt": "Vào nhà sách và đứng ở một kệ bình thường mày không bao giờ đụng tới.",
+    "tags": ["learning", "novelty", "outside"]
+  },
+  {
+    "id": "try-new-local-eatery",
+    "title": "Ăn ở một quán chưa thử",
+    "prompt": "Chọn một quán làm mày hơi tò mò. Không cần chắc ngon, chỉ cần mới.",
+    "tags": ["food", "adventure", "local"]
+  },
+  {
+    "id": "buy-small-local-market-item",
+    "title": "Mua một món nhỏ ở chợ local",
+    "prompt": "Đi chợ hoặc tiệm gần nhà, mua một món nhỏ rồi đem về dùng theo cách nào đó.",
+    "tags": ["food", "local", "adventure"]
+  },
+  {
+    "id": "solo-cafe-sit",
+    "title": "Ngồi một mình ở quán",
+    "prompt": "Không làm việc. Không cố productive. Chỉ ngồi, nhìn, nghe, và để đầu óc trôi.",
+    "tags": ["solo", "calm", "notice"]
+  },
+  {
+    "id": "walk-with-new-album",
+    "title": "Đi bộ với một album lạ",
+    "prompt": "Bật một album chưa nghe bao giờ và để nhạc dẫn đường.",
+    "tags": ["music", "outside", "body"]
+  },
+  {
+    "id": "find-free-view",
+    "title": "Tìm một view đẹp miễn phí",
+    "prompt": "Sân thượng, cầu, công viên, bờ sông, ban công, góc đường. Đứng nhìn một chút.",
+    "tags": ["outside", "beauty", "calm"]
+  },
+  {
+    "id": "revisit-old-place",
+    "title": "Ghé một nơi cũ",
+    "prompt": "Quay lại một nơi từng gắn với một giai đoạn của mày. Nhìn xem cảm giác bây giờ khác gì.",
+    "tags": ["memory", "outside", "reflection"]
+  },
+  {
+    "id": "walk-after-rain",
+    "title": "Đi một vòng lúc trời vừa mưa xong",
+    "prompt": "Nếu an toàn, ra ngoài sau mưa và để ý mùi, ánh sáng, mặt đường.",
+    "tags": ["outside", "notice", "calm"]
+  },
+  {
+    "id": "intentionally-bad-drawing",
+    "title": "Vẽ xấu có chủ đích",
+    "prompt": "Vẽ một thứ bất kỳ và cho phép nó xấu. Mục tiêu là chơi, không phải đẹp.",
+    "tags": ["creative", "play", "fun"]
+  },
+  {
+    "id": "write-100-word-story",
+    "title": "Viết truyện 100 chữ",
+    "prompt": "Bắt đầu bằng một câu ngẫu nhiên rồi để nó tự chạy.",
+    "tags": ["creative", "writing", "play"]
+  },
+  {
+    "id": "write-vietnamese-haiku",
+    "title": "Viết haiku tiếng Việt",
+    "prompt": "Ba dòng ngắn về một cảnh hôm nay.",
+    "tags": ["creative", "writing", "slow"]
+  },
+  {
+    "id": "make-weird-mood-playlist",
+    "title": "Tạo playlist cho một mood kỳ quặc",
+    "prompt": "Đặt tên playlist thật cụ thể, ví dụ: “muốn reset đời nhưng chưa muốn cố quá”.",
+    "tags": ["music", "creative", "mood"]
+  },
+  {
+    "id": "make-life-meme",
+    "title": "Làm meme về đời mình",
+    "prompt": "Biến mood hiện tại thành một meme. Không cần đăng.",
+    "tags": ["creative", "fun", "play"]
+  },
+  {
+    "id": "photo-by-color",
+    "title": "Chụp ảnh theo một màu",
+    "prompt": "Chọn một màu rồi đi săn mọi thứ có màu đó quanh mình.",
+    "tags": ["creative", "notice", "photo"]
+  },
+  {
+    "id": "photo-by-texture",
+    "title": "Chụp ảnh theo một texture",
+    "prompt": "Tìm các bề mặt: tường cũ, vải, gỗ, kính, nước, kim loại.",
+    "tags": ["creative", "photo", "notice"]
+  },
+  {
+    "id": "design-silly-poster",
+    "title": "Design poster ngu ngốc",
+    "prompt": "Làm poster cho một ngày tưởng tượng, ví dụ “Ngày Quốc tế Không Muốn Làm Gì”.",
+    "tags": ["creative", "fun", "design"]
+  },
+  {
+    "id": "create-imaginary-character",
+    "title": "Tạo một nhân vật tưởng tượng",
+    "prompt": "Đặt tên, nghề, nỗi sợ, và một bí mật cho nhân vật đó.",
+    "tags": ["creative", "writing", "play"]
+  },
+  {
+    "id": "five-star-review-ordinary-thing",
+    "title": "Viết review 5 sao cho thứ bình thường",
+    "prompt": "Review cái ghế, ly nước, đôi dép, hoặc bữa cơm như nó là tuyệt phẩm.",
+    "tags": ["creative", "fun", "notice"]
+  },
+  {
+    "id": "handwrite-good-passage",
+    "title": "Chép tay một đoạn hay",
+    "prompt": "Chọn một đoạn văn, lyrics, quote, hoặc câu mình thích rồi viết lại bằng tay.",
+    "tags": ["slow", "creative", "writing"]
+  },
+  {
+    "id": "record-everyday-mini-video",
+    "title": "Quay một mini video đời thường",
+    "prompt": "Ghi lại một khoảnh khắc nhỏ trong ngày như thể nó đáng nhớ.",
+    "tags": ["creative", "memory", "video"]
+  },
+  {
+    "id": "remix-work-corner",
+    "title": "Remix góc làm việc",
+    "prompt": "Đổi vị trí một món đồ, thêm một thứ đẹp, bỏ một thứ thừa.",
+    "tags": ["creative", "reset", "space"]
   },
   {
     "id": "museum-of-me",
     "title": "Museum of me",
-    "prompt": "Chọn 5 món đồ đại diện cho mày hiện tại. Xếp lại, chụp một tấm.",
-    "tags": ["creative", "reflection"]
+    "prompt": "Chọn vài món đồ đại diện cho mày hiện tại. Xếp lại, chụp một tấm.",
+    "tags": ["creative", "reflection", "memory"]
   },
   {
-    "id": "no-complaint-mini",
-    "title": "Bắt quả tang một lần than",
-    "prompt": "Khi chuẩn bị than, đổi nó thành: vấn đề là gì, bước tiếp theo là gì?",
-    "tags": ["mind", "reset"]
+    "id": "draw-neighborhood-map",
+    "title": "Vẽ bản đồ khu mình sống",
+    "prompt": "Vẽ lại khu quanh nhà bằng trí nhớ, đánh dấu mấy điểm có cảm xúc.",
+    "tags": ["creative", "memory", "local"]
+  },
+  {
+    "id": "write-unsent-postcard",
+    "title": "Viết một tấm postcard không gửi",
+    "prompt": "Viết cho một người, một nơi, hoặc một phiên bản cũ của mình. Giữ lại cũng được.",
+    "tags": ["writing", "reflection", "slow"]
+  },
+  {
+    "id": "book-cover-for-current-life",
+    "title": "Tạo bìa sách cho đời mình hiện tại",
+    "prompt": "Đặt tên sách, subtitle, và làm một bìa đơn giản.",
+    "tags": ["creative", "identity", "fun"]
+  },
+  {
+    "id": "make-small-collage",
+    "title": "Làm một collage nhỏ",
+    "prompt": "Ghép vài ảnh, chữ, màu, screenshot thành một moodboard mini.",
+    "tags": ["creative", "mood", "design"]
+  },
+  {
+    "id": "write-user-manual-for-me",
+    "title": "Viết một đoạn “hướng dẫn sử dụng tao”",
+    "prompt": "Viết vui vui: khi tao stress thì nên làm gì, không nên làm gì.",
+    "tags": ["writing", "identity", "reflection"]
+  },
+  {
+    "id": "make-playlist-for-someone",
+    "title": "Tạo một playlist cho người khác",
+    "prompt": "Chọn vài bài và đặt tên playlist như một món quà nhỏ.",
+    "tags": ["music", "social", "creative"]
+  },
+  {
+    "id": "text-someone-you-miss",
+    "title": "Nhắn một người lâu rồi chưa nói chuyện",
+    "prompt": "Không cần deep. Chỉ cần mở lại một cánh cửa nhỏ.",
+    "tags": ["social", "warm", "reconnect"]
+  },
+  {
+    "id": "give-specific-compliment",
+    "title": "Khen thật lòng một người",
+    "prompt": "Khen cụ thể một điều mày thật sự thấy ở họ.",
+    "tags": ["social", "kindness", "warm"]
+  },
+  {
+    "id": "send-late-thank-you",
+    "title": "Gửi lời cảm ơn muộn",
+    "prompt": "Cảm ơn ai đó vì một chuyện cũ mà mày vẫn nhớ.",
+    "tags": ["social", "gratitude", "warm"]
+  },
+  {
+    "id": "invite-someone-to-coffee",
+    "title": "Rủ ai đó đi cafe",
+    "prompt": "Một lời rủ đơn giản cũng được tính là mở cửa.",
+    "tags": ["social", "courage", "warm"]
+  },
+  {
+    "id": "make-short-call",
+    "title": "Gọi một cuộc ngắn",
+    "prompt": "Chọn một người phù hợp và gọi thay vì nhắn.",
+    "tags": ["social", "warm", "voice"]
+  },
+  {
+    "id": "ask-realer-question",
+    "title": "Hỏi một câu thật hơn",
+    "prompt": "Thay vì hỏi xã giao, hỏi một câu khiến cuộc nói chuyện thật hơn một chút.",
+    "tags": ["social", "deep", "connect"]
+  },
+  {
+    "id": "ask-for-small-feedback",
+    "title": "Xin feedback nhỏ",
+    "prompt": "Hỏi một người đáng tin về một việc mày đang làm.",
+    "tags": ["growth", "social", "courage"]
+  },
+  {
+    "id": "send-useful-thing",
+    "title": "Gửi một thứ hữu ích cho ai đó",
+    "prompt": "Link, template, bài viết, quán ngon, tool, hoặc một note ngắn.",
+    "tags": ["kindness", "social", "useful"]
+  },
+  {
+    "id": "invite-someone-to-quest",
+    "title": "Mời ai đó cùng làm một task",
+    "prompt": "Chọn một side quest và rủ một người làm cùng.",
+    "tags": ["social", "play", "connect"]
+  },
+  {
+    "id": "ask-older-person-story",
+    "title": "Hỏi chuyện một người lớn tuổi",
+    "prompt": "Hỏi họ về một thời điểm đáng nhớ trong đời.",
+    "tags": ["social", "story", "learn"]
+  },
+  {
+    "id": "reconnect-old-colleague",
+    "title": "Reconnect với đồng nghiệp cũ",
+    "prompt": "Nhắn một câu không vụ lợi. Chỉ hỏi thăm thật.",
+    "tags": ["social", "reconnect", "warm"]
+  },
+  {
+    "id": "secret-kindness",
+    "title": "Làm một việc tử tế bí mật",
+    "prompt": "Làm một việc tốt nhỏ mà không cần kể với ai.",
+    "tags": ["kindness", "social", "quiet"]
+  },
+  {
+    "id": "write-recommendation",
+    "title": "Viết một lời giới thiệu cho ai đó",
+    "prompt": "Recommend một người, một quán, một sản phẩm, một creator mà mày thật sự thích.",
+    "tags": ["kindness", "social", "share"]
+  },
+  {
+    "id": "send-relevant-photo",
+    "title": "Gửi một tấm ảnh cho người liên quan",
+    "prompt": "Thấy thứ gì làm mày nhớ tới ai đó thì chụp gửi họ.",
+    "tags": ["social", "warm", "memory"]
+  },
+  {
+    "id": "buy-small-gift",
+    "title": "Mua một món nhỏ cho ai đó",
+    "prompt": "Một ly nước, cái bánh, món snack, hoặc thứ rất nhỏ nhưng đúng lúc.",
+    "tags": ["kindness", "social", "warm"]
+  },
+  {
+    "id": "ask-what-someone-is-learning",
+    "title": "Hỏi ai đó đang học gì gần đây",
+    "prompt": "Mở một cuộc nói chuyện bằng sự tò mò thật.",
+    "tags": ["social", "learning", "connect"]
+  },
+  {
+    "id": "walk-with-someone",
+    "title": "Cùng ai đó đi một vòng",
+    "prompt": "Không cần cafe, không cần kế hoạch. Chỉ đi bộ và nói chuyện.",
+    "tags": ["social", "outside", "warm"]
+  },
+  {
+    "id": "body-maintenance-stretch",
+    "title": "Stretch như bảo trì cơ thể",
+    "prompt": "Kéo giãn cổ, vai, lưng, hông. Làm như đang bảo trì cái máy người.",
+    "tags": ["body", "care", "reset"]
+  },
+  {
+    "id": "desk-worker-mobility",
+    "title": "Mobility cho dân ngồi máy",
+    "prompt": "Xoay vai, cổ tay, hông, cổ chân cho cơ thể bớt kẹt.",
+    "tags": ["body", "care", "workspace"]
+  },
+  {
+    "id": "push-up-any-level",
+    "title": "Chống đẩy tùy level",
+    "prompt": "Chống đẩy kiểu nào cũng được, miễn là cơ thể được gọi dậy.",
+    "tags": ["body", "strength", "tiny"]
+  },
+  {
+    "id": "squat-while-waiting",
+    "title": "Squat lúc chờ",
+    "prompt": "Đang chờ nước, chờ build, chờ đồ ăn? Làm vài cái squat.",
+    "tags": ["body", "tiny", "play"]
+  },
+  {
+    "id": "take-the-stairs",
+    "title": "Leo cầu thang",
+    "prompt": "Nếu hợp lý, chọn cầu thang thay vì thang máy.",
+    "tags": ["body", "tiny", "movement"]
+  },
+  {
+    "id": "dance-to-one-song",
+    "title": "Nhảy theo một bài nhạc",
+    "prompt": "Bật một bài làm mày muốn cử động và nhảy như không ai nhìn.",
+    "tags": ["body", "music", "play"]
+  },
+  {
+    "id": "walk-and-listen-deeply",
+    "title": "Đi bộ nghe một bài thật kỹ",
+    "prompt": "Chọn một bài, vừa đi vừa nghe từng lớp âm thanh trong đó.",
+    "tags": ["body", "music", "notice"]
+  },
+  {
+    "id": "make-a-good-drink",
+    "title": "Tự pha một ly nước ngon",
+    "prompt": "Nước đá, chanh, trà, cafe, cacao, gì cũng được. Làm nó tử tế hơn bình thường.",
+    "tags": ["care", "food", "slow"]
+  },
+  {
+    "id": "eat-green-meal",
+    "title": "Ăn một bữa có màu xanh",
+    "prompt": "Thêm rau hoặc trái cây thật vào một bữa ăn.",
+    "tags": ["body", "food", "care"]
+  },
+  {
+    "id": "try-non-miserable-healthy-food",
+    "title": "Thử một món healthy không khổ",
+    "prompt": "Chọn thứ tốt hơn bình thường nhưng vẫn phải ngon.",
+    "tags": ["food", "body", "care"]
+  },
+  {
+    "id": "cook-from-available-ingredients",
+    "title": "Nấu món từ nguyên liệu có sẵn",
+    "prompt": "Mở tủ ra và chế một món đơn giản từ những thứ đang có.",
+    "tags": ["food", "creative", "home"]
+  },
+  {
+    "id": "plate-meal-beautifully",
+    "title": "Chuẩn bị một bữa ăn đẹp hơn thường lệ",
+    "prompt": "Không cần cầu kỳ. Chỉ cần bày ra đẹp hơn một chút.",
+    "tags": ["food", "beauty", "care"]
+  },
+  {
+    "id": "shower-as-reset-ritual",
+    "title": "Tắm như một nghi thức reset",
+    "prompt": "Tắm chậm hơn, đổi mùi sữa tắm, bật nhạc, để cơ thể biết ngày đã chuyển cảnh.",
+    "tags": ["care", "reset", "body"]
+  },
+  {
+    "id": "make-bed-mini-hotel",
+    "title": "Dọn giường như khách sạn mini",
+    "prompt": "Làm cái giường nhìn mời gọi hơn một chút.",
+    "tags": ["care", "home", "reset"]
+  },
+  {
+    "id": "prepare-outfit-for-new-version",
+    "title": "Chuẩn bị outfit cho một phiên bản khác",
+    "prompt": "Chọn đồ như thể hôm nay mày muốn thử một mood khác của mình.",
+    "tags": ["identity", "care", "play"]
+  },
+  {
+    "id": "care-for-neglected-item",
+    "title": "Chăm một món đồ đang bị bỏ quên",
+    "prompt": "Lau giày, lau bàn phím, giặt balo, sạc tai nghe, chăm cây.",
+    "tags": ["care", "home", "reset"]
+  },
+  {
+    "id": "clean-one-small-corner",
+    "title": "Dọn một góc nhỏ",
+    "prompt": "Chỉ một góc thôi. Đừng biến nó thành đại tu đời.",
+    "tags": ["reset", "home", "space"]
+  },
+  {
+    "id": "clean-desktop",
+    "title": "Dọn desktop",
+    "prompt": "Xóa hoặc gom lại mấy file đang nằm lộn xộn trên màn hình.",
+    "tags": ["digital", "reset", "space"]
+  },
+  {
+    "id": "clean-downloads",
+    "title": "Dọn Downloads",
+    "prompt": "Xóa bớt đống file tải về mà chính mày cũng không nhớ là gì.",
+    "tags": ["digital", "reset", "space"]
+  },
+  {
+    "id": "clean-camera-roll-by-theme",
+    "title": "Dọn camera roll theo một chủ đề",
+    "prompt": "Xóa ảnh mờ, screenshot rác, hoặc gom ảnh đẹp vào một album.",
+    "tags": ["digital", "memory", "reset"]
+  },
+  {
+    "id": "create-things-i-like-album",
+    "title": "Tạo album “things I like”",
+    "prompt": "Gom vài ảnh làm mày thấy vui, đẹp, hoặc muốn nhớ.",
+    "tags": ["memory", "joy", "digital"]
+  },
+  {
+    "id": "clean-wallet-or-bag",
+    "title": "Dọn ví hoặc balo",
+    "prompt": "Lôi hết ra, bỏ thứ không cần, giữ lại thứ thật sự dùng.",
+    "tags": ["home", "reset", "space"]
+  },
+  {
+    "id": "reset-work-desk",
+    "title": "Dọn lại bàn làm việc",
+    "prompt": "Làm cho cái bàn dễ ngồi xuống hơn một chút.",
+    "tags": ["workspace", "focus", "reset"]
+  },
+  {
+    "id": "fix-small-annoyance",
+    "title": "Sửa một thứ nhỏ đang gây khó chịu",
+    "prompt": "Một dây cáp rối, shortcut thiếu, bug nhỏ, bóng đèn hỏng, cái móc lệch.",
+    "tags": ["fix", "reset", "tiny"]
+  },
+  {
+    "id": "create-shortcut-for-repeated-task",
+    "title": "Tạo một shortcut cho việc lặp lại",
+    "prompt": "Một snippet, bookmark, script, automation, template, hoặc checklist nhỏ.",
+    "tags": ["build", "system", "useful"]
+  },
+  {
+    "id": "write-future-helper-note",
+    "title": "Viết note “lần sau đỡ ngu”",
+    "prompt": "Ghi lại cách làm một việc mà tương lai mày chắc chắn sẽ cần.",
+    "tags": ["learning", "system", "note"]
+  },
+  {
+    "id": "create-small-checklist",
+    "title": "Tạo một checklist nhỏ",
+    "prompt": "Checklist cho việc hay lặp: deploy, đi du lịch, phỏng vấn, mua đồ, review tài liệu.",
+    "tags": ["build", "system", "useful"]
+  },
+  {
+    "id": "process-one-backlog-tab",
+    "title": "Dọn một tab backlog",
+    "prompt": "Chọn một tab đang mở lâu ngày: đọc, lưu lại, hoặc đóng nó.",
+    "tags": ["digital", "focus", "reset"]
+  },
+  {
+    "id": "organize-bookmarks",
+    "title": "Sắp xếp lại bookmark",
+    "prompt": "Gom vài bookmark thật sự còn giá trị vào đúng chỗ.",
+    "tags": ["digital", "system", "reset"]
+  },
+  {
+    "id": "clean-small-inbox",
+    "title": "Làm sạch một inbox nhỏ",
+    "prompt": "Email, chat, notes, hoặc todo list. Chỉ xử lý một cụm nhỏ.",
+    "tags": ["digital", "reset", "focus"]
+  },
+  {
+    "id": "change-wallpaper-for-new-mood",
+    "title": "Đổi hình nền theo mood mới",
+    "prompt": "Chọn một hình nền làm mày thấy mình đang bước sang một phase khác.",
+    "tags": ["digital", "identity", "mood"]
+  },
+  {
+    "id": "learn-unrelated-topic",
+    "title": "Học một thứ không liên quan công việc",
+    "prompt": "Chọn một chủ đề chỉ vì tò mò, không vì KPI.",
+    "tags": ["learning", "curious", "play"]
+  },
+  {
+    "id": "read-long-article",
+    "title": "Đọc một bài dài",
+    "prompt": "Đọc một thứ có chiều sâu hơn feed.",
+    "tags": ["learning", "focus", "slow"]
+  },
+  {
+    "id": "explain-something-you-know",
+    "title": "Giải thích một thứ mình biết",
+    "prompt": "Viết lại một khái niệm như đang giải thích cho người mới.",
+    "tags": ["learning", "teach", "writing"]
+  },
+  {
+    "id": "watch-unusual-educational-video",
+    "title": "Xem một video educational lạ",
+    "prompt": "Chọn chủ đề bình thường mày không xem.",
+    "tags": ["learning", "novelty", "curious"]
+  },
+  {
+    "id": "learn-few-foreign-phrases",
+    "title": "Học vài câu ở một ngôn ngữ",
+    "prompt": "Không cần nghiêm túc. Chỉ cần mở một cánh cửa mới.",
+    "tags": ["learning", "language", "play"]
+  },
+  {
+    "id": "read-random-wikipedia-page",
+    "title": "Đọc một trang Wikipedia random",
+    "prompt": "Nhảy vào một chủ đề lạ và xem nó dẫn mày đi đâu.",
+    "tags": ["learning", "curious", "rabbit-hole"]
+  },
+  {
+    "id": "mini-research",
+    "title": "Làm một mini research",
+    "prompt": "Chọn một câu hỏi nhỏ và tìm câu trả lời đủ dùng.",
+    "tags": ["learning", "curious", "research"]
+  },
+  {
+    "id": "explore-map-of-place-to-visit",
+    "title": "Xem bản đồ một nơi muốn tới",
+    "prompt": "Mở map, nhìn đường phố, lưu vài điểm làm mày tò mò.",
+    "tags": ["travel", "curious", "adventure"]
+  },
+  {
+    "id": "learn-small-hands-on-skill",
+    "title": "Học một kỹ năng tay chân nhỏ",
+    "prompt": "Gấp giấy, buộc dây, pha nước, cắt trái cây, chụp ảnh, chỉnh màu.",
+    "tags": ["learning", "hands-on", "play"]
+  },
+  {
+    "id": "try-new-tool",
+    "title": "Thử một công cụ mới",
+    "prompt": "Tool viết, vẽ, note, code, AI, thiết kế, hoặc quản lý file. Chỉ thử cho biết.",
+    "tags": ["learning", "tool", "novelty"]
+  },
+  {
+    "id": "create-small-artifact",
+    "title": "Tạo một artifact nhỏ",
+    "prompt": "Template, mini guide, mindmap, note, script, playlist, hoặc ảnh ghép.",
+    "tags": ["build", "creative", "useful"]
+  },
+  {
+    "id": "review-recent-spending",
+    "title": "Review vài khoản chi gần đây",
+    "prompt": "Nhìn lại vài khoản và đánh dấu: đáng, xàm, hoặc học được gì.",
+    "tags": ["money", "clarity", "reflection"]
+  },
+  {
+    "id": "solo-date",
+    "title": "Tự hẹn hò với mình",
+    "prompt": "Làm một combo nhỏ cho bản thân: ăn món thích, đi chỗ thích, không cần rủ ai.",
+    "tags": ["solo", "joy", "care"]
+  },
+  {
+    "id": "try-different-version-of-yourself",
+    "title": "Thử một version khác của mình",
+    "prompt": "Mặc khác, nghe nhạc khác, gọi món khác, hoặc chọn một vibe khác mọi khi.",
+    "tags": ["identity", "novelty", "play"]
+  },
+  {
+    "id": "redo-old-favorite-quest",
+    "title": "Chọn một task cũ để làm lại",
+    "prompt": "Mở history, chọn một task từng làm thấy thích, rồi làm lại theo mood hôm nay.",
+    "tags": ["repeat", "memory", "joy"]
   }
 ]
