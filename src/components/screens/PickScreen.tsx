@@ -18,18 +18,18 @@ export function PickScreen() {
     donePulse.trigger();
   };
 
-  // Full-bleed stage: the deck owns the whole viewport (under the floating nav),
-  // so it reads as "the screen is the deck" rather than a card boxed in the dark.
+  // A definite viewport-height stage (not min-height) so the deck and card can
+  // resolve `h-full` and never collapse/clip. pt clears the floating nav.
   return (
-    <div className="relative flex flex-1 justify-center px-3 pt-20 pb-4 sm:items-center sm:p-6 sm:pt-20">
-      {/* Warm pool behind the deck so any space around it is a lit scene, not void. */}
+    <section className="relative flex h-dvh items-center justify-center px-4 pt-20 pb-5">
+      {/* Warm pool so the space around the deck reads as a lit scene, not a void. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -z-10 h-136 w-136 -translate-x-1/2 translate-y-[-50%] rounded-full bg-amber-300/15 blur-[110px]"
+        className="pointer-events-none absolute top-1/2 left-1/2 -z-10 h-136 w-136 -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber-300/15 blur-[110px]"
       />
 
       {cards.length > 0 ? (
-        <div className="h-full w-full max-w-xl sm:h-[min(82dvh,46rem)]">
+        <div className="relative h-full max-h-168 w-full max-w-md">
           <QuestDeck
             cards={cards}
             counts={completionCounts}
@@ -40,13 +40,13 @@ export function PickScreen() {
           />
         </div>
       ) : (
-        <div className="flex w-full max-w-xl items-center">
+        <div className="w-full max-w-md">
           <EmptyState
             title="Deck đang trống"
             description="Import lại data hoặc reset ở History để bắt đầu lại."
           />
         </div>
       )}
-    </div>
+    </section>
   );
 }
