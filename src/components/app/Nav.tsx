@@ -20,7 +20,7 @@ export function Nav() {
   const pathname = usePathname();
 
   return (
-    <header className="pointer-events-none fixed inset-x-0 top-0 z-50 flex items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
+    <header className="pt-nav-safe pointer-events-none fixed inset-x-0 top-0 z-50 flex items-center justify-between gap-3 px-4 pb-3 sm:px-6 lg:px-8">
       <Link
         href="/"
         className="group pointer-events-auto flex items-center gap-2.5 rounded-full border border-white/10 bg-black/30 py-1.5 pr-4 pl-1.5 backdrop-blur-xl transition hover:bg-black/40"

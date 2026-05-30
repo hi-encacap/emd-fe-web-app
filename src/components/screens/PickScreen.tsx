@@ -21,7 +21,7 @@ export function PickScreen() {
   // A definite viewport-height stage (not min-height) so the deck and card can
   // resolve `h-full` and never collapse/clip. pt clears the floating nav.
   return (
-    <section className="relative flex h-dvh items-center justify-center px-4 pt-20 pb-5">
+    <section className="pt-screen-safe pb-screen-safe relative flex h-dvh items-center justify-center px-4">
       {/* Warm pool so the space around the deck reads as a lit scene, not a void. */}
       <div
         aria-hidden

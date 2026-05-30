@@ -4,7 +4,7 @@ import { EmptyState } from "@/components/ui/EmptyState";
 // and no cached copy of that route. Kept inside the normal app chrome.
 export default function OfflinePage() {
   return (
-    <div className="flex flex-1 items-center justify-center px-4 pt-20 pb-5">
+    <div className="pt-screen-safe pb-screen-safe flex flex-1 items-center justify-center px-4">
       <div className="w-full max-w-md">
         <EmptyState
           title="Mày đang offline"

@@ -33,6 +33,27 @@ body {
 }
 
 /* ------------------------------------------------------------------ */
+/* iOS safe-area handling for installed (standalone) PWA mode.         */
+/* viewport-fit=cover + a translucent status bar make the app draw     */
+/* full-bleed under the status bar / Dynamic Island / home indicator;  */
+/* these utilities pad content back into the safe zone. `env()` is 0   */
+/* on devices without insets (desktop, Android), so they're no-ops     */
+/* there. `--safe-*` vars allow overriding the inset for testing.      */
+/* ------------------------------------------------------------------ */
+@utility pt-nav-safe {
+  /* fixed nav: clear the status bar / Dynamic Island */
+  padding-top: calc(var(--safe-top, env(safe-area-inset-top)) + 0.75rem);
+}
+@utility pt-screen-safe {
+  /* screen content: clear the fixed nav AND the top inset */
+  padding-top: calc(var(--safe-top, env(safe-area-inset-top)) + 5rem);
+}
+@utility pb-screen-safe {
+  /* screen content: clear the home indicator */
+  padding-bottom: calc(var(--safe-bottom, env(safe-area-inset-bottom)) + 1.25rem);
+}
+
+/* ------------------------------------------------------------------ */
 /* Cross-route View Transitions (Next.js experimental.viewTransition). */
 /* The persistent header/nav lives in the layout, so its pixels are    */
 /* identical across routes and crossfade invisibly — only the content  */
