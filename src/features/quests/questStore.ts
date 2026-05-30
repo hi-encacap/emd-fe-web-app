@@ -15,6 +15,7 @@ interface QuestStoreState extends QuestSnapshot {
 
   // actions (all immutable updates)
   shuffle: () => void;
+  pick: (questId: string) => void;
   complete: (questId: string, note?: string) => void;
   toggleFavorite: (questId: string) => void;
   reset: () => void;
@@ -37,6 +38,8 @@ export const useQuestStore = create<QuestStoreState>((set, get) => ({
     const next = pickRandomQuest(quests, currentQuestId, completions);
     if (next) set({ currentQuestId: next.id });
   },
+
+  pick: (questId) => set({ currentQuestId: questId }),
 
   complete: (questId, note) => {
     const completion: QuestCompletion = {

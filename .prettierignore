@@ -1,7 +1,6 @@
 .next
 node_modules
 pnpm-lock.yaml
-prototype.tsx
 .claude
 docs
 .github

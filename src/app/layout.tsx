@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import { ViewTransitions } from "next-view-transitions";
+import { AppChrome } from "@/components/app/AppChrome";
+import { Providers } from "./providers";
 import "./globals.css";
 
 const geist = Geist({
@@ -17,7 +20,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="vi" className={geist.variable}>
       <body className="bg-surface min-h-screen overflow-x-hidden text-stone-100 antialiased">
-        {children}
+        <ViewTransitions>
+          <Providers>
+            <AppChrome>{children}</AppChrome>
+          </Providers>
+        </ViewTransitions>
       </body>
     </html>
   );
