@@ -1,24 +1,4 @@
 {
-  "name": "mood-deck",
-  "version": "0.1.0",
-  "private": true,
-  "type": "module",
-  "packageManager": "pnpm@10.33.0",
-  "engines": {
-    "node": ">=20.9.0"
-  },
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "typecheck": "tsc --noEmit",
-    "validate": "pnpm typecheck && pnpm lint && pnpm build",
-    "prepare": "husky"
-  },
   "dependencies": {
     "lucide-react": "^1.17.0",
     "motion": "^12.40.0",
@@ -45,13 +25,33 @@
     "tailwindcss": "^4.3.0",
     "typescript": "^6.0.3"
   },
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "lint-staged": {
+    "*.{json,css,md}": [
+      "prettier --write"
+    ],
     "*.{ts,tsx,js,jsx,mjs}": [
       "eslint --fix",
       "prettier --write"
-    ],
-    "*.{json,css,md}": [
-      "prettier --write"
     ]
-  }
+  },
+  "name": "mood-deck",
+  "packageManager": "pnpm@10.33.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "validate": "pnpm typecheck && pnpm lint && pnpm build"
+  },
+  "type": "module",
+  "version": "0.1.0"
 }

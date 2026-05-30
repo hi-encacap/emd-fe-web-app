@@ -8,9 +8,9 @@ interface TwoColumnProps {
 /** The shared two-column layout used by every screen (text/controls + card/list). */
 export function TwoColumn({ left, right }: TwoColumnProps) {
   return (
-    <div className="grid flex-1 items-center gap-6 py-8 lg:grid-cols-[1.05fr_0.95fr] lg:py-10">
-      <section className="space-y-6">{left}</section>
-      <aside className="relative">{right}</aside>
+    <div className="grid flex-1 items-start gap-6 py-4 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-10">
+      <section className="min-w-0 space-y-6">{left}</section>
+      <aside className="relative min-w-0">{right}</aside>
     </div>
   );
 }

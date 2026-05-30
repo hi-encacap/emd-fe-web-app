@@ -33,13 +33,10 @@ export function LibraryScreen() {
   return (
     <TwoColumn
       left={
-        <div className="space-y-5">
-          <div>
-            <p className="text-sm tracking-[0.28em] text-amber-200/80 uppercase">Library</p>
-            <h2 className="mt-3 text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl">
-              Toàn bộ deck
-            </h2>
-          </div>
+        <div className="space-y-4">
+          <h2 className="text-2xl font-semibold tracking-[-0.03em] text-white sm:text-3xl">
+            Toàn bộ deck
+          </h2>
 
           <div className="flex max-w-xl items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-xl">
             <Search size={18} className="text-stone-500" />
@@ -72,12 +69,12 @@ export function LibraryScreen() {
             ))}
           </div>
 
-          <div className="flex max-w-2xl flex-wrap gap-2">
+          <div className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:px-0">
             {tags.map((tag) => (
               <button
                 key={tag}
                 onClick={() => setTagFilter(tagFilter === tag ? null : tag)}
-                className={`rounded-full px-3 py-1.5 text-xs transition ${
+                className={`shrink-0 rounded-full px-3 py-1.5 text-xs transition ${
                   tagFilter === tag
                     ? "bg-amber-200 text-stone-950"
                     : "border border-white/10 bg-black/20 text-stone-400 hover:text-white"

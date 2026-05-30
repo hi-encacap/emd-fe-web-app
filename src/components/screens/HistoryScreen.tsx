@@ -25,16 +25,10 @@ export function HistoryScreen() {
   return (
     <TwoColumn
       left={
-        <div className="space-y-5">
-          <div>
-            <p className="text-sm tracking-[0.28em] text-amber-200/80 uppercase">History</p>
-            <h2 className="mt-3 text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl">
-              Những lần đã sống thử
-            </h2>
-          </div>
-          <p className="max-w-xl text-base leading-7 text-stone-400">
-            History chỉ ghi lại việc mày đã làm. Không chấm điểm, không phán xét, không ép streak.
-          </p>
+        <div className="space-y-4">
+          <h2 className="text-2xl font-semibold tracking-[-0.03em] text-white sm:text-3xl">
+            Những lần đã sống thử
+          </h2>
 
           <div className="flex flex-wrap gap-2">
             <button
