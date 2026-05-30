@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/* Design tokens (relocated from prototype.tsx, exposed as utilities + */
+/* CSS variables so the theme is reusable and easy to re-skin later).  */
+/* ------------------------------------------------------------------ */
+@theme {
+  /* surfaces */
+  --color-surface: #11100f; /* warm near-black app background */
+  --color-card: #f5f5f4; /* stone-100 quest-card face */
+
+  /* radii */
+  --radius-card: 2rem; /* the big rounded quest card */
+
+  /* typography */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+html,
+body {
+  background-color: var(--color-surface);
+  color: theme(--color-stone-100);
+}
+
+/* ------------------------------------------------------------------ */
+/* Cross-route View Transitions (Next.js experimental.viewTransition). */
+/* The persistent header/nav lives in the layout, so its pixels are    */
+/* identical across routes and crossfade invisibly — only the content  */
+/* visibly transitions. Honors reduced-motion.                          */
+/* ------------------------------------------------------------------ */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.28s;
+  animation-timing-function: ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}
