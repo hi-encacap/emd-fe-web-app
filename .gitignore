@@ -35,3 +35,4 @@ yarn-error.log*
 
 # Claude Code local tooling config (remove this line to track it in the repo)
 .claude/
+.screenshots/

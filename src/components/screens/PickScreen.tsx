@@ -1,53 +1,51 @@
 "use client";
 
-import { AnimatePresence } from "motion/react";
-import { QuestCard } from "@/components/quests/QuestCard";
+import { QuestDeck } from "@/components/quests/QuestDeck";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { useDeck } from "@/hooks/useDeck";
 import { useDonePulse } from "@/hooks/useDonePulse";
 import { useQuestActions } from "@/hooks/useQuestActions";
+import { useSwipeQueue } from "@/hooks/useSwipeQueue";
 
 export function PickScreen() {
-  const { currentQuest, currentDoneCount } = useDeck();
-  const { shuffle, complete, toggleFavorite } = useQuestActions();
+  const { completionCounts } = useDeck();
+  const { cards, advance } = useSwipeQueue();
+  const { complete, toggleFavorite } = useQuestActions();
   const donePulse = useDonePulse();
 
-  const handleDone = () => {
-    if (!currentQuest) return;
-    complete(currentQuest.id);
+  const handleDone = (questId: string) => {
+    complete(questId);
     donePulse.trigger();
   };
 
-  // The card is the whole screen: open the app, see one quest, act on it.
-  // Everything the user needs (shuffle, done, favorite) lives on the card.
+  // The deck is the whole screen: draw a quest by swiping the top card away, or
+  // act on it in place. Everything lives on the card.
   return (
     <div className="relative flex flex-1 items-center justify-center py-4">
-      {/* Warm spotlight pooling behind the deck so it reads as one deliberately
-          placed focal point, not a card floating in empty space. */}
+      {/* Stage lighting: a warm pool behind the deck turns the surrounding dark
+          into intentional negative space rather than empty void. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -z-10 h-160 w-160 -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber-200/10 blur-[120px]"
+        className="pointer-events-none absolute top-1/2 left-1/2 -z-10 h-136 w-136 -translate-x-1/2 translate-y-[-55%] rounded-full bg-amber-300/20 blur-[100px]"
       />
-      <div className="w-full max-w-xl">
-        <AnimatePresence mode="wait">
-          {currentQuest ? (
-            <QuestCard
-              key={currentQuest.id}
-              quest={currentQuest}
-              doneCount={currentDoneCount}
-              onDone={handleDone}
-              onShuffle={shuffle}
-              onFavorite={() => toggleFavorite(currentQuest.id)}
-              donePulse={donePulse.active}
-            />
-          ) : (
-            <EmptyState
-              title="Deck đang trống"
-              description="Import lại data hoặc reset ở History để bắt đầu lại."
-            />
-          )}
-        </AnimatePresence>
-      </div>
+
+      {cards.length > 0 ? (
+        <QuestDeck
+          cards={cards}
+          counts={completionCounts}
+          donePulse={donePulse.active}
+          onDone={handleDone}
+          onFavorite={toggleFavorite}
+          onAdvance={advance}
+        />
+      ) : (
+        <div className="w-full max-w-xl">
+          <EmptyState
+            title="Deck đang trống"
+            description="Import lại data hoặc reset ở History để bắt đầu lại."
+          />
+        </div>
+      )}
     </div>
   );
 }
