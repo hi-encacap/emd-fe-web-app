@@ -27,8 +27,19 @@ export function QuestCard({
       animate={{ opacity: 1, rotate: 0, y: 0 }}
       exit={{ opacity: 0, rotate: 1.5, y: -18 }}
       transition={{ type: "spring", stiffness: 150, damping: 18 }}
-      className="relative mx-auto max-w-xl"
+      className="relative mx-auto w-full max-w-xl"
     >
+      {/* Deck layers: two cards peeking behind the front face so a single quest
+          reads as one card drawn off a stack (the brief's "bốc một lá bài"). */}
+      <div
+        aria-hidden
+        className="rounded-card absolute inset-x-7 -top-6 h-full border border-white/10 bg-stone-100/30 shadow-xl shadow-black/20"
+      />
+      <div
+        aria-hidden
+        className="rounded-card absolute inset-x-3.5 -top-3 h-full border border-white/10 bg-stone-100/60 shadow-xl shadow-black/20"
+      />
+
       <div className="rounded-card absolute inset-0 translate-y-4 bg-black/30 blur-xl" />
       <div className="rounded-card relative overflow-hidden border border-white/15 bg-stone-100 p-5 text-stone-950 shadow-2xl shadow-black/30 sm:p-7">
         <div className="absolute top-[-5rem] right-[-5rem] h-44 w-44 rounded-full bg-amber-300/60 blur-3xl" />

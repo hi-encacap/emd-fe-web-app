@@ -21,7 +21,13 @@ export function PickScreen() {
   // The card is the whole screen: open the app, see one quest, act on it.
   // Everything the user needs (shuffle, done, favorite) lives on the card.
   return (
-    <div className="flex flex-1 items-center justify-center py-4">
+    <div className="relative flex flex-1 items-center justify-center py-4">
+      {/* Warm spotlight pooling behind the deck so it reads as one deliberately
+          placed focal point, not a card floating in empty space. */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 left-1/2 -z-10 h-160 w-160 -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber-200/10 blur-[120px]"
+      />
       <div className="w-full max-w-xl">
         <AnimatePresence mode="wait">
           {currentQuest ? (
