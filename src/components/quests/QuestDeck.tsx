@@ -1,24 +1,39 @@
 "use client";
 
+import { useLayoutEffect, useState } from "react";
 import { animate, motion, useMotionValue, useReducedMotion, useTransform } from "motion/react";
 import { QuestCard } from "./QuestCard";
 import { SWIPE, springs } from "@/lib/motion";
 import type { CompletionCounts } from "@/features/quests/questSelectors";
 import type { Quest } from "@/features/quests/questTypes";
 
+/** Fixed number of mounted card slots. These DOM nodes are created once and
+ *  recycled forever — a swipe never mounts or unmounts a card. */
+const STACK = 3;
+
 interface QuestDeckProps {
-  /** Visible cards, top first. cards[0] is interactive; the rest sit behind. */
+  /** Buffered cards, top first. Should hold at least STACK entries. */
   cards: Quest[];
   counts: CompletionCounts;
   donePulse: boolean;
   onDone: (questId: string) => void;
   onFavorite: (questId: string) => void;
-  /** Draw the next card (called after the top card is thrown off). */
+  /** Draw the next card into the buffer (head drops, tail refills). */
   onAdvance: () => void;
 }
 
-const noop = () => {};
-
+/**
+ * A real, recycling card stack.
+ *
+ * STACK slots are mounted once (keyed by slot index, never by quest id) and the
+ * `drag` prop is constant on every slot, so swiping never creates or destroys a
+ * DOM/projection node — the jank source. A swipe only rotates `front` and shifts
+ * the data buffer; the thrown card's node is reused as the new bottom card, its
+ * content swapped while it sits hidden behind the stack.
+ *
+ * Slot s shows `cards[depth(s)]` where depth = (s - front) mod STACK. Only the
+ * depth-0 slot is interactive; the rest are inert via pointer-events-none.
+ */
 export function QuestDeck({
   cards,
   counts,
@@ -27,109 +42,101 @@ export function QuestDeck({
   onFavorite,
   onAdvance,
 }: QuestDeckProps) {
-  const top = cards[0];
-  if (!top) return null;
+  const [front, setFront] = useState(0);
+  if (cards.length === 0) return null;
+
+  const handleThrown = () => {
+    // Buffer shift and front rotation batch into one render, keeping every
+    // slot's depth→quest mapping consistent as the stack advances.
+    onAdvance();
+    setFront((value) => (value + 1) % STACK);
+  };
 
   return (
-    <div className="relative mx-auto w-full max-w-xl">
-      {/* contact shadow — grounds the deck on a surface instead of floating */}
-      <div
-        aria-hidden
-        className="absolute -bottom-6 left-1/2 h-12 w-4/5 -translate-x-1/2 rounded-[50%] bg-black/55 blur-2xl"
-      />
-
-      {/* deepest decorative edge so the stack always reads as a thick deck */}
-      <div
-        aria-hidden
-        className="rounded-card absolute inset-0 translate-y-9 scale-90 border border-black/5 bg-stone-400/80"
-      />
-
-      {/* invisible sizer: gives the wrapper the height of the current card so the
-          absolutely-positioned stack cards have something to fill */}
-      <div aria-hidden className="pointer-events-none invisible">
-        <QuestCard
-          quest={top}
-          doneCount={0}
-          donePulse={false}
-          onDone={noop}
-          onShuffle={noop}
-          onFavorite={noop}
-        />
-      </div>
-
-      {/* live cards: top (draggable) + the next one behind it */}
-      {cards.slice(0, 2).map((quest, index) => (
-        <StackCard
-          key={quest.id}
-          quest={quest}
-          depth={index}
-          isTop={index === 0}
-          doneCount={counts.get(quest.id) ?? 0}
-          donePulse={index === 0 && donePulse}
-          onDone={() => onDone(quest.id)}
-          onFavorite={() => onFavorite(quest.id)}
-          onAdvance={onAdvance}
-        />
-      ))}
+    <div className="relative h-full w-full">
+      {Array.from({ length: STACK }, (_, slot) => {
+        const depth = (slot - front + STACK) % STACK;
+        const quest = cards[depth];
+        if (!quest) return null;
+        return (
+          <DeckSlot
+            key={slot}
+            quest={quest}
+            depth={depth}
+            doneCount={counts.get(quest.id) ?? 0}
+            donePulse={donePulse && depth === 0}
+            onDone={() => onDone(quest.id)}
+            onFavorite={() => onFavorite(quest.id)}
+            onThrown={handleThrown}
+          />
+        );
+      })}
     </div>
   );
 }
 
-interface StackCardProps {
+interface DeckSlotProps {
   quest: Quest;
   depth: number;
-  isTop: boolean;
   doneCount: number;
   donePulse: boolean;
   onDone: () => void;
   onFavorite: () => void;
-  onAdvance: () => void;
+  onThrown: () => void;
 }
 
-function StackCard({
+function DeckSlot({
   quest,
   depth,
-  isTop,
   doneCount,
   donePulse,
   onDone,
   onFavorite,
-  onAdvance,
-}: StackCardProps) {
+  onThrown,
+}: DeckSlotProps) {
+  const isFront = depth === 0;
   const reduceMotion = useReducedMotion();
   const x = useMotionValue(0);
-  const rotate = useTransform(x, [-220, 220], [-SWIPE.rotate, SWIPE.rotate]);
-  const opacity = useTransform(x, [-320, -150, 0, 150, 320], [0, 1, 1, 1, 0]);
+  const rotate = useTransform(x, [-240, 240], [-SWIPE.rotate, SWIPE.rotate]);
+  const opacity = useTransform(x, [-340, -180, 0, 180, 340], [0, 1, 1, 1, 0]);
+
+  // When this slot rotates off the front, snap x back to 0 while it's hidden
+  // behind the stack so it's centered when it later returns to the top. Runs
+  // before paint → no flash.
+  useLayoutEffect(() => {
+    if (!isFront) x.set(0);
+  }, [isFront, x]);
 
   const flyAway = (direction: 1 | -1) => {
     if (reduceMotion) {
-      onAdvance();
+      onThrown();
       return;
     }
-    const offscreen = direction * (typeof window === "undefined" ? 800 : window.innerWidth);
-    animate(x, offscreen, { ...springs.release, onComplete: onAdvance });
+    const offscreen = direction * (typeof window === "undefined" ? 900 : window.innerWidth * 1.25);
+    animate(x, offscreen, { ...springs.release, onComplete: onThrown });
   };
 
   return (
     <motion.div
-      className={`absolute inset-0 ${isTop ? "cursor-grab active:cursor-grabbing" : "pointer-events-none"}`}
-      style={isTop ? { x, rotate, opacity, zIndex: 20 } : { zIndex: 20 - depth }}
-      animate={{ scale: 1 - depth * 0.05, y: depth * 18 }}
+      // `drag` stays "x" on every slot (toggling it recreates the projection
+      // node); interaction is gated purely by pointer-events.
+      className={`absolute inset-0 will-change-transform ${
+        isFront ? "cursor-grab active:cursor-grabbing" : "pointer-events-none"
+      }`}
+      style={{ x, rotate, opacity, zIndex: STACK - depth }}
+      animate={{ scale: 1 - depth * 0.04, y: depth * 14 }}
       transition={springs.gentle}
-      drag={isTop ? "x" : false}
-      dragMomentum={false}
-      whileDrag={{ scale: 1.02 }}
-      onDragEnd={
-        isTop
-          ? (_event, info) => {
-              const thrown =
-                Math.abs(info.offset.x) > SWIPE.offset ||
-                Math.abs(info.velocity.x) > SWIPE.velocity;
-              if (thrown) flyAway(info.offset.x > 0 ? 1 : -1);
-              else animate(x, 0, springs.snappy);
-            }
-          : undefined
-      }
+      drag="x"
+      dragElastic={0.7}
+      onDragEnd={(_event, info) => {
+        if (!isFront) return;
+        const thrown =
+          Math.abs(info.offset.x) > SWIPE.offset || Math.abs(info.velocity.x) > SWIPE.velocity;
+        // Throw it off, or spring back to center. (No dragSnapToOrigin: it would
+        // fight the flyAway animation and cancel the throw.)
+        if (thrown) flyAway(info.offset.x > 0 ? 1 : -1);
+        else animate(x, 0, springs.snappy);
+      }}
     >
       <QuestCard
         quest={quest}
