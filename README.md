@@ -1,4 +1,6 @@
-# Mood Deck
+# Kairos Drift
+
+_Drift through the right moments._ (Kairos — the opportune moment to act.)
 
 A minimalist, local-first web app for picking tiny "side quests" for everyday life:
 open it, get a quest card, shuffle if it doesn't fit your mood, hit **Done** when you

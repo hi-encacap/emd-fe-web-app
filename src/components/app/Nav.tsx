@@ -28,7 +28,7 @@ export function Nav() {
         <span className="grid h-8 w-8 place-items-center rounded-full bg-gradient-to-br from-amber-200 to-rose-300 text-stone-950 shadow-lg shadow-amber-900/30">
           <Sparkles size={16} />
         </span>
-        <span className="text-sm font-semibold tracking-wide text-white">Mood Deck</span>
+        <span className="text-sm font-semibold tracking-wide text-white">Kairos Drift</span>
       </Link>
 
       <nav className="pointer-events-auto flex rounded-full border border-white/10 bg-black/30 p-1 backdrop-blur-xl">

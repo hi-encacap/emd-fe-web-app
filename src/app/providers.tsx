@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, type ReactNode } from "react";
+import { ServiceWorkerRegistrar } from "@/components/pwa/ServiceWorkerRegistrar";
 import { toSnapshot, useQuestStore } from "@/features/quests/questStore";
 import { questRepository } from "@/platform/repository";
 
@@ -33,5 +34,10 @@ export function Providers({ children }: { children: ReactNode }) {
     };
   }, []);
 
-  return <>{children}</>;
+  return (
+    <>
+      <ServiceWorkerRegistrar />
+      {children}
+    </>
+  );
 }

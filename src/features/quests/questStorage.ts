@@ -2,7 +2,11 @@ import { z } from "zod";
 import { CURRENT_SCHEMA_VERSION, migrate } from "./questMigrations";
 import { questCompletionSchema, questSchema, type QuestSnapshot } from "./questTypes";
 
-/** localStorage key for the persisted deck. */
+/**
+ * localStorage key for the persisted deck. Kept as the historical "mood-deck"
+ * name (the app was renamed to Kairos Drift) so existing users' saved data is
+ * not orphaned — this key is internal and never shown in the UI.
+ */
 export const STORAGE_KEY = "mood-deck-v1";
 
 /** The on-disk shape: a versioned envelope around the domain snapshot. */
