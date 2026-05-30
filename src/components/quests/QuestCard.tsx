@@ -15,9 +15,9 @@ interface QuestCardProps {
 
 /**
  * The face of a quest card. Purely presentational — drag, stacking and the
- * shuffle throw are owned by <QuestDeck>. Sized with `h-full` so it fills the
- * absolutely-positioned stack slot, with a min height so the deck never jumps
- * between short and tall quests.
+ * shuffle throw are owned by <QuestDeck>. Fills its slot (`h-full`) so it runs
+ * full-bleed inside the deck; content is pushed to the top and bottom edges so a
+ * large card never reads as empty.
  */
 export function QuestCard({
   quest,
@@ -28,36 +28,33 @@ export function QuestCard({
   donePulse,
 }: QuestCardProps) {
   return (
-    <article className="rounded-card relative flex h-full min-h-120 flex-col justify-between gap-8 overflow-hidden border border-white/15 bg-stone-100 p-5 text-stone-950 shadow-2xl shadow-black/40 sm:p-7">
-      <div className="pointer-events-none absolute -top-20 -right-20 h-44 w-44 rounded-full bg-amber-300/60 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-24 -left-20 h-48 w-48 rounded-full bg-violet-300/50 blur-3xl" />
+    <article className="rounded-card relative flex h-full flex-col justify-between gap-6 overflow-hidden border border-white/15 bg-stone-100 p-6 text-stone-950 shadow-2xl shadow-black/50 sm:p-8">
+      <div className="pointer-events-none absolute -top-20 -right-20 h-56 w-56 rounded-full bg-amber-300/60 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-24 -left-20 h-60 w-60 rounded-full bg-violet-300/50 blur-3xl" />
 
-      <div className="relative space-y-8">
-        <div className="flex items-start justify-between gap-4">
-          <div className="rounded-full bg-stone-950 px-3 py-1.5 text-xs font-semibold tracking-[0.2em] text-stone-100 uppercase">
-            Side Quest
-          </div>
-          <button
-            onClick={onFavorite}
-            className={`grid h-10 w-10 place-items-center rounded-full border transition ${
-              quest.isFavorite
-                ? "border-rose-300 bg-rose-100 text-rose-600"
-                : "border-stone-300/70 bg-white/40 text-stone-500 hover:text-stone-950"
-            }`}
-            aria-label="Favorite"
-          >
-            <Heart size={18} fill={quest.isFavorite ? "currentColor" : "none"} />
-          </button>
-        </div>
+      <div className="relative flex items-start justify-between gap-4">
+        <span className="rounded-full bg-stone-950 px-3 py-1.5 text-xs font-semibold tracking-[0.2em] text-stone-100 uppercase">
+          Side Quest
+        </span>
+        <button
+          onClick={onFavorite}
+          className={`grid h-10 w-10 shrink-0 place-items-center rounded-full border transition ${
+            quest.isFavorite
+              ? "border-rose-300 bg-rose-100 text-rose-600"
+              : "border-stone-300/70 bg-white/40 text-stone-500 hover:text-stone-950"
+          }`}
+          aria-label="Favorite"
+        >
+          <Heart size={18} fill={quest.isFavorite ? "currentColor" : "none"} />
+        </button>
+      </div>
 
-        <div>
-          <h2 className="text-4xl leading-[0.95] font-semibold tracking-[-0.055em] sm:text-6xl">
-            {quest.title}
-          </h2>
-          <p className="mt-6 text-lg leading-8 text-stone-700 sm:text-xl">{quest.prompt}</p>
-        </div>
-
-        <div className="flex flex-wrap gap-2">
+      <div className="relative">
+        <h2 className="text-4xl leading-[0.95] font-semibold tracking-[-0.055em] sm:text-6xl">
+          {quest.title}
+        </h2>
+        <p className="mt-5 text-lg leading-8 text-stone-700 sm:text-xl">{quest.prompt}</p>
+        <div className="mt-6 flex flex-wrap gap-2">
           {quest.tags.map((tag) => (
             <span
               key={tag}

@@ -18,28 +18,29 @@ export function PickScreen() {
     donePulse.trigger();
   };
 
-  // The deck is the whole screen: draw a quest by swiping the top card away, or
-  // act on it in place. Everything lives on the card.
+  // Full-bleed stage: the deck owns the whole viewport (under the floating nav),
+  // so it reads as "the screen is the deck" rather than a card boxed in the dark.
   return (
-    <div className="relative flex flex-1 items-center justify-center py-4">
-      {/* Stage lighting: a warm pool behind the deck turns the surrounding dark
-          into intentional negative space rather than empty void. */}
+    <div className="relative flex flex-1 justify-center px-3 pt-20 pb-4 sm:items-center sm:p-6 sm:pt-20">
+      {/* Warm pool behind the deck so any space around it is a lit scene, not void. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/2 left-1/2 -z-10 h-136 w-136 -translate-x-1/2 translate-y-[-55%] rounded-full bg-amber-300/20 blur-[100px]"
+        className="pointer-events-none absolute top-1/2 left-1/2 -z-10 h-136 w-136 -translate-x-1/2 translate-y-[-50%] rounded-full bg-amber-300/15 blur-[110px]"
       />
 
       {cards.length > 0 ? (
-        <QuestDeck
-          cards={cards}
-          counts={completionCounts}
-          donePulse={donePulse.active}
-          onDone={handleDone}
-          onFavorite={toggleFavorite}
-          onAdvance={advance}
-        />
+        <div className="h-full w-full max-w-xl sm:h-[min(82dvh,46rem)]">
+          <QuestDeck
+            cards={cards}
+            counts={completionCounts}
+            donePulse={donePulse.active}
+            onDone={handleDone}
+            onFavorite={toggleFavorite}
+            onAdvance={advance}
+          />
+        </div>
       ) : (
-        <div className="w-full max-w-xl">
+        <div className="flex w-full max-w-xl items-center">
           <EmptyState
             title="Deck đang trống"
             description="Import lại data hoặc reset ở History để bắt đầu lại."
