@@ -1,0 +1,110 @@
+[
+  {
+    "id": "walk-nowhere",
+    "title": "Đi bộ không mục tiêu",
+    "prompt": "Ra ngoài đi một vòng, không cần đích đến. Nhìn đường phố như thể mày là khách du lịch.",
+    "tags": ["body", "reset", "outside"]
+  },
+  {
+    "id": "text-old-friend",
+    "title": "Nhắn một người lâu rồi chưa nói chuyện",
+    "prompt": "Không cần deep. Chỉ cần mở lại một cánh cửa nhỏ.",
+    "tags": ["social", "warm"]
+  },
+  {
+    "id": "bad-drawing",
+    "title": "Vẽ xấu có chủ đích",
+    "prompt": "Vẽ một thứ bất kỳ và cho phép nó xấu. Mục tiêu là chơi, không phải đẹp.",
+    "tags": ["creative", "fun"]
+  },
+  {
+    "id": "three-good-things",
+    "title": "Ghi 3 chuyện tốt",
+    "prompt": "Ghi lại ba điều nhỏ tốt đẹp hôm nay. Nhỏ cỡ ly nước ngon cũng được.",
+    "tags": ["mind", "gratitude"]
+  },
+  {
+    "id": "local-adventure",
+    "title": "Đi một nơi chưa từng đi",
+    "prompt": "Chọn một góc thành phố mày ít ghé. Đi như một mini adventure.",
+    "tags": ["outside", "adventure"]
+  },
+  {
+    "id": "tiny-kindness",
+    "title": "Tử tế bí mật",
+    "prompt": "Làm một việc tốt nhỏ mà không cần kể với ai.",
+    "tags": ["social", "kindness"]
+  },
+  {
+    "id": "one-page-brain-dump",
+    "title": "Xả não một trang",
+    "prompt": "Viết mọi thứ đang chạy trong đầu. Không edit, không cần hay, không cần đúng.",
+    "tags": ["mind", "reset"]
+  },
+  {
+    "id": "photo-theme",
+    "title": "Chụp 10 tấm theo một chủ đề",
+    "prompt": "Chọn một chủ đề: màu đỏ, bóng đổ, cửa sổ, đồ cũ. Rồi đi săn ảnh.",
+    "tags": ["creative", "outside"]
+  },
+  {
+    "id": "clean-one-corner",
+    "title": "Dọn một góc nhỏ",
+    "prompt": "Chỉ một góc thôi: bàn, desktop, Downloads, tủ đầu giường. Đừng biến nó thành đại tu đời.",
+    "tags": ["reset", "home"]
+  },
+  {
+    "id": "solo-cafe",
+    "title": "Ngồi một mình ở quán",
+    "prompt": "Không làm việc. Không cố productive. Chỉ ngồi, nhìn, nghe, và để đầu óc trôi.",
+    "tags": ["solo", "mind"]
+  },
+  {
+    "id": "new-song-walk",
+    "title": "Đi bộ với một album lạ",
+    "prompt": "Bật một album chưa nghe bao giờ và đi một vòng. Để nhạc dẫn mood.",
+    "tags": ["body", "music"]
+  },
+  {
+    "id": "ask-better-question",
+    "title": "Hỏi một câu tốt hơn bình thường",
+    "prompt": "Thay vì hỏi 'ổn không?', hỏi một câu thật hơn một chút.",
+    "tags": ["social", "warm"]
+  },
+  {
+    "id": "make-a-playlist",
+    "title": "Tạo playlist cho một mood kỳ quặc",
+    "prompt": "Ví dụ: 'muốn reset đời nhưng chưa muốn cố quá'. Đặt tên cho vui.",
+    "tags": ["creative", "music"]
+  },
+  {
+    "id": "sunset-mission",
+    "title": "Đi săn hoàng hôn",
+    "prompt": "Canh lúc trời đổi màu. Đứng yên một chút và nhìn cho đàng hoàng.",
+    "tags": ["outside", "calm"]
+  },
+  {
+    "id": "write-future-self",
+    "title": "Viết thư cho mình sau này",
+    "prompt": "Nói thật với bản thân tương lai. Không cần motivational. Chỉ cần thật.",
+    "tags": ["mind", "reflection"]
+  },
+  {
+    "id": "try-new-food",
+    "title": "Ăn một món chưa từng thử",
+    "prompt": "Chọn món làm mày hơi tò mò. Không cần ngon chắc, chỉ cần mới.",
+    "tags": ["adventure", "food"]
+  },
+  {
+    "id": "museum-of-me",
+    "title": "Museum of me",
+    "prompt": "Chọn 5 món đồ đại diện cho mày hiện tại. Xếp lại, chụp một tấm.",
+    "tags": ["creative", "reflection"]
+  },
+  {
+    "id": "no-complaint-mini",
+    "title": "Bắt quả tang một lần than",
+    "prompt": "Khi chuẩn bị than, đổi nó thành: vấn đề là gì, bước tiếp theo là gì?",
+    "tags": ["mind", "reset"]
+  }
+]
